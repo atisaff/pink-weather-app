@@ -209,4 +209,6 @@ body {
   font-size: small;
   color: #8f8585;
   text-align: center;
+  display: block;
+  margin: 0 auto;
 }
