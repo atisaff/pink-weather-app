@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,700;1,800&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="src/style.css" type="text/css" />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-lg-9 main-info">
+              <div class="cityName">
+                <h1 id="cityName"></h1>
+              </div>
+              <form class="search-city form-group" id="search-form">
+                <input
+                  class="form-control city-input d-sm-inline-block m-2"
+                  type="text"
+                  placeholder="type in the city name"
+                  autocomplete="off"
+                  autofocus="off"
+                  id="search-text-input" />
+                <input
+                  class="searchButton btn d-sm-inline-block m-2"
+                  type="submit"
+                  value="Search" />
+              </form>
+
+              <div class="main">
+                <div class="row">
+                  <div class="col-lg-4">
+                    <div class="weather-icon">
+                      <i class="far fa-sun fa-5x"></i>
+                    </div>
+                  </div>
+                  <div class="col-lg-8 day-info">
+                    <p class="day">Today</p>
+                    <h5 class="weekday m-3">
+                      <span>THURSDAY</span>
+                      <small>20 January 2022</small>
+                    </h5>
+                    <div class="temp">
+                      <p class="cel"><span id="temp">20</span>°C</p>
+                    </div>
+                    <div class="desc">
+                      <p>Sunny</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="other-info">
+                <div class="row">
+                  <div class="col-6 rainChance">
+                    <p class="rainChance-des">chance of rain</p>
+                    <p class="rainChance-num">20%</p>
+                  </div>
+                  <div class="col-6 uv-info">
+                    <p>UV Strength</p>
+                    <p class="uv-num">10</p>
+                    <p class="uv-des">Sunscreen Required</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- next 5 days forecast -->
+            <div class="col-lg-3 side-info">
+              <div class="forecast">
+                <i class="fa fa-cloud fa-2x"></i>
+                <div class="forecast-des">
+                  <span class="dayOne dayofWeek">FRI</span>
+                  <span class="dayOne-date date">21 JAN</span>
+                  <p class="f-temp dayOne-temp">22 <span>°C</span></p>
+                </div>
+              </div>
+              <div class="forecast">
+                <i class="fas fa-sun fa-2x"></i>
+                <div class="forecast-des">
+                  <span class="dayTwo dayofWeek">SAT</span>
+                  <span class="dayTwo-date date">22 JAN</span>
+                  <p class="f-temp dayTwo-temp">15 <span>°C</span></p>
+                </div>
+              </div>
+              <div class="forecast">
+                <i class="fas fa-sun fa-2x"></i>
+                <div class="forecast-des">
+                  <span class="dayThree dayofWeek">SUN</span>
+                  <span class="dayThree-date date">23 JAN</span>
+                  <p class="f-temp dayThree-temp">22 <span>°C</span></p>
+                </div>
+              </div>
+              <div class="forecast">
+                <i class="fa fa-cloud fa-2x"></i>
+                <div class="forecast-des">
+                  <span class="dayFour dayofWeek">MON</span>
+                  <span class="dayFour-date date">24 JAN</span>
+                  <p class="f-temp dayFour-temp">18 <span>°C</span></p>
+                </div>
+              </div>
+              <div class="forecast">
+                <i class="fas fa-cloud-rain fa-2x"></i>
+                <div class="forecast-des">
+                  <span class="dayFive dayofWeek">TUE</span>
+                  <span class="dayFive-date date">25 JAN</span>
+                  <p class="f-temp dayFive-temp">25 <span>°C</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <span class="creatorr-profile">
+      This project was coded by
+      <a href="https://github.com/atisaff">Atieh Safaei</a> and is
+      <a href="https://github.com/atisaff/my-weather-app">on GitHub</a> and
+      <a href="">hosted on Netlify</a>
+    </span>
+
+    <script src="src/app.js"></script>
+  </body>
+</html>
