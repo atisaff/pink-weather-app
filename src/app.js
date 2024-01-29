@@ -84,4 +84,3 @@ form.addEventListener("submit", search);
 
 let forecastElement = document.querySelector("#forecast");
 forecastElement.innerHTML = forecastHtml;
-displayForecast();
