@@ -53,7 +53,7 @@ function search(event) {
 }
 
 function displayForecast() {
-  let forecastHtml = "";
+  let forecastHtml = " ";
   let days = [
     "Monday",
     "Tuseday",
