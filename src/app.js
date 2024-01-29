@@ -51,18 +51,20 @@ function search(event) {
 
   axios.get(apiUrl).then(displayTemp);
 }
-let forecastHtml = "";
-let dayss = [
-  "Monday",
-  "Tuseday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-  "Sunday",
-];
+
 function displayForecast() {
-  dayss.forEach(function (day) {
+  let forecastHtml = "";
+  let days = [
+    "Monday",
+    "Tuseday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+
+  days.forEach(function (day) {
     forecastHtml =
       forecastHtml +
       `
@@ -81,4 +83,4 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
 
 let forecastElement = document.querySelector("#forecast");
-forecastElement.innerHTML = forecastHtml;
+forecastElement.innerHTML = `${forecastHtml}`;
