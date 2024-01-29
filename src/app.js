@@ -51,36 +51,5 @@ function search(event) {
 
   axios.get(apiUrl).then(displayTemp);
 }
-
-function displayForecast() {
-  let forecastHtml = "";
-  let days = [
-    "Monday",
-    "Tuseday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday",
-  ];
-
-  days.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `
-    <div class="forecast">
-                <i class="fas fa-sun fa-2x"></i>
-                <div class="forecast-des">
-                  <span class="dayTwo dayofWeek">${day}</span>
-                  <span class="dayTwo-date date">22 JAN</span>
-                  <p class="f-temp dayTwo-temp">15 <span>°C</span></p>
-                </div>
-              </div>
-              `;
-  });
-}
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
-
-let forecastElement = document.querySelector("#forecast");
-forecastElement.innerHTML = `${forecastHtml}`;
