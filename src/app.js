@@ -51,12 +51,8 @@ function search(event) {
 
   axios.get(apiUrl).then(displayTemp);
 }
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", search);
 
 function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
-
   let days = ["Monday", "Tuseday", "Wednesday", "Thursday"];
   let forecastHtml = "";
   days.forEach(function (day) {
@@ -74,5 +70,9 @@ function displayForecast() {
               `;
   });
 }
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", search);
+
+let forecastElement = document.querySelector("#forecast");
 forecastElement.innerHTML = forecastHtml;
 displayForecast();
