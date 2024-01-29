@@ -53,8 +53,17 @@ function search(event) {
 }
 
 function displayForecast() {
-  let days = ["Monday", "Tuseday", "Wednesday", "Thursday"];
   let forecastHtml = "";
+  let days = [
+    "Monday",
+    "Tuseday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+
   days.forEach(function (day) {
     forecastHtml =
       forecastHtml +
