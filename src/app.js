@@ -51,20 +51,18 @@ function search(event) {
 
   axios.get(apiUrl).then(displayTemp);
 }
-
+let forecastHtml = "";
+let dayss = [
+  "Monday",
+  "Tuseday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+];
 function displayForecast() {
-  let forecastHtml = " ";
-  let days = [
-    "Monday",
-    "Tuseday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday",
-  ];
-
-  days.forEach(function (day) {
+  dayss.forEach(function (day) {
     forecastHtml =
       forecastHtml +
       `
