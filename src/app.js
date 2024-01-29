@@ -75,3 +75,4 @@ function displayForecast() {
   });
 }
 forecastElement.innerHTML = forecastHtml;
+displayForecast();
