@@ -21,6 +21,9 @@ body {
   display: block;
 }
 
+.card-body .main-info {
+  width: 100%;
+}
 .cityName h1,
 .cityName small {
   display: inline-block;
@@ -164,10 +167,6 @@ body {
   width: 55px;
   height: 55px;
   border-radius: 20%;
-}
-
-.side-info {
-  margin: auto;
 }
 
 .forecast {
