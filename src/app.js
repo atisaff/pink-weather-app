@@ -39,8 +39,6 @@ function displayTemp(response) {
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.city;
   tempElement.innerHTML = temperature;
-
-  getForecast(response.data.city);
 }
 
 function search(event) {
@@ -65,3 +63,14 @@ function getForecast(city) {
 function displayForecast(response) {
   console.log(response.data);
 }
+
+`<div class="weather-forecast-day">
+   <div class="weather-forecast-date">Tuseday</div>
+   <div class="weather-forecast-icon"></div>
+   <div class="weather-forecast-temperatures"></div>
+    <div class="weather-forecast-temperature"></div>
+     <strong>12</strong>
+    </div>
+    <div class="weather-forecast-temperature">9</div></div >
+  </div >
+</div >`;
