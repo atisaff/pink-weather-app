@@ -29,68 +29,66 @@
     <div class="container">
       <div class="card">
         <div class="card-body">
-          <div class="row">
-            <div class="col-lg-9 main-info">
-              <div class="cityName">
-                <h1 id="cityName"></h1>
-              </div>
-              <form class="search-city form-group" id="search-form">
-                <input
-                  class="form-control city-input d-sm-inline-block m-2"
-                  type="text"
-                  placeholder="type in the city name"
-                  autocomplete="off"
-                  autofocus="off"
-                  id="search-text-input" />
-                <input
-                  class="searchButton btn d-sm-inline-block m-2"
-                  type="submit"
-                  value="Search" />
-              </form>
+          <div class="col-lg-9 main-info">
+            <div class="cityName">
+              <h1 id="cityName"></h1>
+            </div>
+            <form class="search-city form-group" id="search-form">
+              <input
+                class="form-control city-input d-sm-inline-block m-2"
+                type="text"
+                placeholder="type in the city name"
+                autocomplete="off"
+                autofocus="off"
+                id="search-text-input" />
+              <input
+                class="searchButton btn d-sm-inline-block m-2"
+                type="submit"
+                value="Search" />
+            </form>
 
-              <div class="main">
-                <div class="row">
-                  <div class="col-lg-4">
-                    <div class="weather-icon">
-                      <i class="far fa-sun fa-5x"></i>
-                    </div>
-                  </div>
-                  <div class="col-lg-8 day-info">
-                    <p class="day">Today</p>
-                    <h5 class="weekday m-3">
-                      <span>THURSDAY</span>
-                      <small>20 January 2022</small>
-                    </h5>
-                    <div class="temp">
-                      <p class="cel"><span id="temp">20</span>°C</p>
-                    </div>
-                    <div class="desc">
-                      <p>Sunny</p>
-                    </div>
+            <div class="main">
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="weather-icon">
+                    <i class="far fa-sun fa-5x"></i>
                   </div>
                 </div>
-              </div>
-
-              <div class="other-info">
-                <div class="row">
-                  <div class="col-6 rainChance">
-                    <p class="rainChance-des">chance of rain</p>
-                    <p class="rainChance-num">20%</p>
+                <div class="col-lg-8 day-info">
+                  <p class="day">Today</p>
+                  <h5 class="weekday m-3">
+                    <span>THURSDAY</span>
+                    <small>20 January 2022</small>
+                  </h5>
+                  <div class="temp">
+                    <p class="cel"><span id="temp">20</span>°C</p>
                   </div>
-                  <div class="col-6 uv-info">
-                    <p>UV Strength</p>
-                    <p class="uv-num">10</p>
-                    <p class="uv-des">Sunscreen Required</p>
+                  <div class="desc">
+                    <p>Sunny</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- next 5 days forecast -->
-
-            <div class="weather-forecast" id="#forecast">
-              <div class="row-5">Thu</div>
+            <div class="other-info">
+              <div class="row">
+                <div class="col-6 rainChance">
+                  <p class="rainChance-des">chance of rain</p>
+                  <p class="rainChance-num">20%</p>
+                </div>
+                <div class="col-6 uv-info">
+                  <p>UV Strength</p>
+                  <p class="uv-num">10</p>
+                  <p class="uv-des">Sunscreen Required</p>
+                </div>
+              </div>
             </div>
+          </div>
+
+          <!-- next 5 days forecast -->
+
+          <div class="weather-forecast" id="#forecast">
+            <div class="row-5">Thu</div>
           </div>
         </div>
       </div>
