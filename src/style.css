@@ -24,7 +24,10 @@ body {
 .card-body .main-info {
   width: 100%;
 }
-.cityName h1,
+.cityName h1 {
+  font-size: 50px;
+}
+
 .cityName small {
   display: inline-block;
 }
@@ -97,9 +100,9 @@ body {
   padding: 20px;
 }
 
-.day {
+#day {
   display: inline-block;
-  font-size: 40px;
+  font-size: 35px;
 }
 
 .weekday {
@@ -117,7 +120,7 @@ body {
   font-weight: bold;
 }
 
-.desc p {
+#cond {
   font-size: 30px;
 }
 
@@ -150,6 +153,8 @@ body {
 .uv-num {
   font-weight: bold;
   font-size: 30px;
+  display: flex;
+  justify-content: center;
 }
 
 .uv-info {
@@ -161,6 +166,8 @@ body {
 .uv-num,
 .uv-des {
   color: #933333;
+  display: flex;
+  justify-content: center;
 }
 
 .side-info i.fa,
@@ -176,6 +183,7 @@ body {
   border-radius: 10px;
   padding-bottom: 30px;
   display: flex;
+  justify-content: space-around;
 }
 
 .weather-forecast:hover {
@@ -190,14 +198,18 @@ body {
 
 .weather-forecast-date {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
   opacity: 0.5;
+  text-align: center;
 }
 
 .weather-forecast-temp {
-  font-size: 20px;
+  font-size: 18px;
   width: 100px;
   padding: 5px 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 .weather-forecast-temp-max {
   font-weight: bold;
@@ -206,6 +218,10 @@ body {
   opacity: 0.5;
 }
 .weather-forecast-icon {
+  width: 88px;
+  height: 88px;
+  display: block;
+  margin: 0 auto;
 }
 
 .profile {

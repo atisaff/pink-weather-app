@@ -30,7 +30,9 @@ let monthes = [
 ];
 let month = monthes[now.getMonth()];
 
-weekDate.innerHTML = `${day} ${month} ${date}  ${year} , ${hour}:${minutes}`;
+let dayElement = document.querySelector("#day");
+dayElement.innerHTML = `${day}`;
+weekDate.innerHTML = `${month} ${date}  ${year} , ${hour}:${minutes}`;
 
 function displayTemp(response) {
   console.log(response.data);
@@ -39,6 +41,14 @@ function displayTemp(response) {
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.city;
   tempElement.innerHTML = temperature;
+  let conditionElement = document.querySelector("#cond");
+  conditionElement.innerHTML = response.data.condition.description;
+
+  let windSpeed = document.querySelector("#wind-s");
+  windSpeed.innerHTML = Math.round(response.data.wind.speed);
+
+  let humidityElement = document.querySelector("#humid");
+  humidityElement.innerHTML = response.data.temperature.humidity;
 
   getForecast(response.data.city);
 }
@@ -57,6 +67,20 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
+function formatDate(timetamp) {
+  let date = new Date(timetamp * 1000);
+  let days = [
+    "Monday",
+    "Tuseday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+
+  return days[date.getDay()];
+}
 function getForecast(city) {
   let apiKey = "b2a5adcct04b33178913oc335f405433";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
@@ -66,32 +90,35 @@ function getForecast(city) {
 }
 
 function displayForecast(response) {
-  console.log(response.data);
-
-  let days = ["Monday", "Tuseday", "Wednesday", "Thursday", "Friday"];
   let forecastHtml = "";
 
-  days.forEach(function (day) {
-    forecastHtml += ` 
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHtml += ` 
    <div id="forecast-by-day"   
-    <div class="weather-forecast-date">${day}</div>
+    <div class="weather-forecast-date">${formatDate(day.time)}</div>
       
 
       <img 
-        src="https://cdn4.iconfinder.com/data/icons/the-weather-is-nice-today/64/weather_49-1024.png"
-        width="40"
+        src="${day.condition.icon_url}"
+      
         class="weather-forecast-icon"
       />
      
      
       <div class="weather-forecast-temp">
-        <div class="weather-forecast-temp-max"> 18°</div>
-        <div class="weather-forecast-temp-min"> 12°</div>
+        <div class="weather-forecast-temp-max">${Math.round(
+          day.temperature.maximum
+        )}°</div>
+        <div class="weather-forecast-temp-min">${Math.round(
+          day.temperature.minimum
+        )}°</div>
       </div>
      </div> 
       
   
 `;
+    }
   });
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = forecastHtml;

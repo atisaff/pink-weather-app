@@ -55,7 +55,7 @@
                   </div>
                 </div>
                 <div class="col-lg-8 day-info">
-                  <p class="day">Today</p>
+                  <p id="day">Today</p>
                   <h5 class="weekday m-3">
                     <span>THURSDAY</span>
                     <small>20 January 2022</small>
@@ -63,7 +63,7 @@
                   <div class="temp">
                     <p class="cel"><span id="temp">20</span>°C</p>
                   </div>
-                  <div class="desc">
+                  <div class="desc" id="cond">
                     <p>Sunny</p>
                   </div>
                 </div>
@@ -73,13 +73,19 @@
             <div class="other-info">
               <div class="row">
                 <div class="col-6 rainChance">
-                  <p class="rainChance-des">chance of rain</p>
-                  <p class="rainChance-num">20%</p>
+                  <p class="rainChance-des">Humidity</p>
+                  <div class="rainChance-num">
+                    <p id="humid">20</p>
+                    %
+                  </div>
                 </div>
                 <div class="col-6 uv-info">
-                  <p>UV Strength</p>
-                  <p class="uv-num">10</p>
-                  <p class="uv-des">Sunscreen Required</p>
+                  <p>Wind Speed</p>
+                  <div class="uv-num">
+                    <p id="wind-s">10</p>
+
+                    km/h
+                  </div>
                 </div>
               </div>
             </div>
